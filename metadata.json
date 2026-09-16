@@ -1,0 +1,7 @@
+{
+  "name": "চার্জিং সহকারী",
+  "description": "পেশাদার বাংলা অ্যান্ড্রয়েড চার্জিং সহকারী (Charging Assistant) - নির্ভরযোগ্য ব্যাকগ্রাউন্ড ব্যাটারি মনিটরিং এবং ভয়েস অ্যালার্ট।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

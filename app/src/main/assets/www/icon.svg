@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0f766e" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#042f2e" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="1"/>
+    </radialGradient>
+    
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#10b981" stop-opacity="0.95"/>
+      <stop offset="80%" stop-color="#059669" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#047857" stop-opacity="1"/>
+    </linearGradient>
+
+    <linearGradient id="metalTop" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="30%" stop-color="#e2e8f0"/>
+      <stop offset="60%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#64748b"/>
+    </linearGradient>
+
+    <linearGradient id="boltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle -->
+  <rect width="512" height="512" rx="110" fill="url(#bgGlow)"/>
+  <rect width="504" height="504" x="4" y="4" rx="106" fill="none" stroke="#10b981" stroke-width="3" stroke-opacity="0.3"/>
+
+  <!-- Battery Terminal (Top Cap) -->
+  <g filter="url(#dropShadow)">
+    <rect x="216" y="58" width="80" height="28" rx="8" fill="url(#metalTop)"/>
+    <ellipse cx="256" cy="62" rx="36" ry="6" fill="#f1f5f9" opacity="0.6"/>
+
+    <!-- Main Battery 3D Body -->
+    <rect x="136" y="82" width="240" height="360" rx="36" fill="url(#bodyGrad)" stroke="#334155" stroke-width="4"/>
+    
+    <!-- Inner Chamber / Glass Tube -->
+    <rect x="152" y="98" width="208" height="328" rx="26" fill="#091e1d" stroke="#065f46" stroke-width="2"/>
+
+    <!-- Liquid / Energy Charge Level (75%) -->
+    <rect x="156" y="170" width="200" height="252" rx="22" fill="url(#glassGrad)" filter="url(#neonGlow)"/>
+
+    <!-- Glowing Charge Segment Dividers -->
+    <line x1="160" y1="240" x2="352" y2="240" stroke="#a7f3d0" stroke-width="2" stroke-opacity="0.5" stroke-dasharray="8 6"/>
+    <line x1="160" y1="310" x2="352" y2="310" stroke="#a7f3d0" stroke-width="2" stroke-opacity="0.5" stroke-dasharray="8 6"/>
+    <line x1="160" y1="380" x2="352" y2="380" stroke="#a7f3d0" stroke-width="2" stroke-opacity="0.5" stroke-dasharray="8 6"/>
+
+    <!-- 3D Glass Light Reflection Highlight -->
+    <path d="M 166 112 Q 172 260 174 410" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.25"/>
+
+    <!-- Big 3D Dynamic Lightning Bolt -->
+    <g filter="url(#neonGlow)">
+      <polygon points="274,152 208,272 254,272 238,368 316,242 270,242" fill="url(#boltGrad)" stroke="#fef9c3" stroke-width="3"/>
+      <!-- Inner core spark -->
+      <polygon points="270,166 220,266 256,266 244,342 302,246 266,246" fill="#ffffff" opacity="0.6"/>
+    </g>
+  </g>
+</svg>

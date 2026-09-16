@@ -1,0 +1,41 @@
+{
+  "id": "com.aistudio.chargingassistant.bnasst",
+  "name": "চার্জিং সহকারী - Bengali Android Charging Assistant",
+  "short_name": "চার্জিং সহকারী",
+  "description": "পেশাদার বাংলা অ্যান্ড্রয়েড চার্জিং সহকারী ও ব্যাটারি হেলথ মনিটর। ব্যাকগ্রাউন্ড সার্ভিস ও ভয়েস অ্যালার্ট।",
+  "lang": "bn",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#020617",
+  "theme_color": "#0f172a",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "./pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
