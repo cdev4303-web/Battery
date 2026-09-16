@@ -54,9 +54,15 @@ jobs:
             keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
             echo "Generated fallback debug.keystore"
           fi
+          if [ ! -f app/google-services.json ]; then
+            mkdir -p app
+            echo '{"project_info":{"project_number":"123456789012","project_id":"charging-assistant-app","storage_bucket":"charging-assistant-app.appspot.com"},"client":[{"client_info":{"mobilesdk_app_id":"1:123456789012:android:abcdef1234567890","android_client_info":{"package_name":"com.example"}},"oauth_client":[],"api_key":[{"current_key":"AIzaSyDummyKeyForBuildVerification12345678"}],"services":{"analytics_service":{"status":1},"appinvite_service":{"status":1,"other_platform_oauth_client":[]},"ads_service":{"status":1}}}],"configuration_version":"1"}' > app/google-services.json
+          fi
 
       - name: Build Android APK
-        run: gradle assembleDebug --no-configuration-cache --stacktrace
+        run: |
+          export GRADLE_OPTS="-Djava.awt.headless=true"
+          gradle assembleDebug --no-configuration-cache --stacktrace
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
